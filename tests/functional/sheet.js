@@ -610,12 +610,6 @@ describe('Functional: sheet', () => {
       expect(getCss(getStyle())).to.be(removeWhitespace(sheet.toString()))
     })
 
-    it('should render sheet with updated props after attach', () => {
-      sheet.attach().update({color: 'green'})
-      const style = removeVendorPrefixes(getCssFromSheet(sheet))
-      expect(style).to.be(removeWhitespace(sheet.toString()))
-    })
-
     it('should update specific rule', () => {
       sheet.update({color: 'yellow'})
       sheet.update('a', {color: 'green'})
